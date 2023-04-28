@@ -1,6 +1,6 @@
-import AkarinClient
-from AkarinClient.src.handlers import setup
-from AkarinClient.src.jellyfin import AkarinClient
+import client
+from client.src.handlers import setup
+from client.src.jellyfin import AkarinClient
 # from localServer.src.websocket import main
 import asyncio
 
