@@ -8,24 +8,24 @@ from . import config
 
 
 class Event:
-    def __init__(self, event_type: str, index: str, payload: str | None) -> None:
+    def __init__(self, event_type: str, identifier: str, payload: str | None) -> None:
         self.event_type = event_type
         self.payload = payload
-        self.index = index
+        self.identifier = identifier
 
     @staticmethod
     def new(event_data: dict[str, str]) -> 'Event':
-        return Event(event_data['event_type'], event_data['index'], event_data['payload'])
+        return Event(event_data['event_type'], event_data['identifier'], event_data['payload'])
     
     async def reply(self, payload: Any):
         data = {
-            "index": str(self.index),
+            "identifier": str(self.identifier),
             "payload": json.dumps(payload)
         }
         response = requests.get(f"{config.SERVER_ENDPOINT}/callback", json=data)
     
     def __str__(self) -> str:
-        return f"Event: {self.event_type}, Index: {self.index}, Payload: {self.payload}"
+        return f"Event: {self.event_type}, Identifier: {self.identifier}, Payload: {self.payload}"
     
     def __repr__(self) -> str:
         return self.__str__()

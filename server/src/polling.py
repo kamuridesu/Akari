@@ -1,4 +1,5 @@
-from typing import Callable
+from typing import Callable, Any
+import uuid
 
 
 class EventEmitter:
@@ -16,5 +17,16 @@ class EventEmitter:
             "event_type": event_type,
             "payload": payload,
             "callback": callback,
-            "index": len(self.events)
+            "identifier": str(uuid.uuid1())
         })
+
+
+class CallbacksHandlers:
+    def __init__(self):
+        self.callbacks: dict[str, Callable] = {}
+
+    async def register(self, unique_identifier: str, callback: Callable):
+        self.callbacks[unique_identifier] = callback
+
+    async def trigger(self, unique_identifier: str, payload: Any):
+        return await self.callbacks[unique_identifier](payload)
