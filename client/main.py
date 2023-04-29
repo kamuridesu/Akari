@@ -1,10 +1,11 @@
 import asyncio
-from src.handlers import setup
+from src.polling import EventPolling
+from src.handlers import ev_handlers
 
 
 async def main():
-    poller = setup()
-    await poller.start(0.1)
+    async with EventPolling(ev_handlers) as poller:
+        await poller.start(0.1)
 
 
 if __name__ == "__main__":
