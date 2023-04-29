@@ -2,10 +2,9 @@
 
 Client-server application to deliver content from Jellyfin runnning on local network to a remote server.
 
-<center>
-    <img src="https://count.kamuridesu.tech?username=Akarin" width=300 alt="count">
+<p align="center">
     <img src="images/akarin.png" width=300 alt="akarin">
-</center>
+</p>
 
 # Server
 
@@ -31,3 +30,7 @@ After all envirinoment variables are set, you can run the AkarinClient using the
 # THIS IS A WORK IN PROGRESS
 
 not functional yet :p
+
+<p align="center">
+    <img src="https://count.kamuridesu.com?username=Akarin" width=300 alt="count">
+</p>
