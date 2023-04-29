@@ -4,7 +4,7 @@ from src.handlers import setup
 
 async def main():
     poller = setup()
-    await poller.start()
+    await poller.start(0.1)
 
 
 if __name__ == "__main__":

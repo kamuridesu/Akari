@@ -1,4 +1,5 @@
-from src.server import start, ev_sender
+from src.server import start
+from src.client_routes import ev_sender
 
 import asyncio
 

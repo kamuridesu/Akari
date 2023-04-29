@@ -78,15 +78,17 @@ class EventPolling:
         self.is_polling = False
         self.running_tasks: set[asyncio.Task] = set()
 
-    async def start(self, polling_interval: int = 1):
+    async def start(self, polling_interval: int = 1, fetch: int = 10):
         self.is_polling = True
         while self.is_polling:
-            events = requests.get(f"{config.SERVER_ENDPOINT}/events")
+            events = requests.get(f"{config.SERVER_ENDPOINT}/events?fetch={fetch}")
             if events.status_code == 200:
                 event_json = events.json()
-                if event_json:
-                    event = Event.new(event_json)
-                    await self.__task_manager(event)
+                print(event_json)
+                for event in event_json:
+                    if event_json:
+                        event = Event.new(event)
+                        await self.__task_manager(event)
             await asyncio.sleep(polling_interval)
 
     async def __task_manager(self, event: Event):

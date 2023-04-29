@@ -31,6 +31,11 @@ After all envirinoment variables are set, you can run the AkarinClient using the
 
 not functional yet :p
 
+# TODO
+
+- [ ] Use aiohttp instead of requests to avoid blocking connections.
+
+
 <p align="center">
     <img src="https://count.kamuridesu.com?username=Akarin" width=300 alt="count">
 </p>
