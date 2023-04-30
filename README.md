@@ -33,7 +33,8 @@ not functional yet :p
 
 # TODO
 
-- [ ] Use aiohttp instead of requests to avoid blocking connections.
+- [x] Use aiohttp instead of requests to avoid blocking connections.
+- [ ] Map all endpoints used by jellyfin-web.
 
 
 <p align="center">
