@@ -4,17 +4,18 @@ from werkzeug.serving import make_server
 import logging
 
 
-__app = Flask("server_mock")
+app = Flask("server_mock")
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
-__app.logger.disabled = True
+app.logger.disabled = True
 log.disabled = True
 
 
 def start():
-    s = make_server("0.0.0.0", 2222, __app)
+    s = make_server("0.0.0.0", 2222, app)
     t = threading.Thread(target=s.serve_forever, name="Server")
     t.start()
+    print("Server started")
     return t
 
 if __name__ == "__main__":

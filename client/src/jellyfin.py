@@ -1,5 +1,6 @@
 import os
 import json
+import time
 
 from jellyfin_apiclient_python import JellyfinClient
 
@@ -32,10 +33,12 @@ class AkarinClient(JellyfinClient):
 
     @property
     async def all_media(self) -> list[dict]:
+        start = time.perf_counter()
         response = self.jellyfin.user_items(params={
                     'recursive': True,
                     'mediaTypes': [ 'Video' ],
                     'collapseBoxSetItems': False,
                     'fields': 'Path',
                     })
+        print(f"Jellyfin took {time.perf_counter() - start} to answer")
         return [file for file in response['Items']]

@@ -16,7 +16,7 @@ SERVER_ENDPOINT = os.getenv("SERVER_ENDPOINT", "http://localhost:2222")
 SSL_ENABLED = "--insecure" not in sys.argv
 
 
-response = requests.get(JELLYFIN_ENDPOINT)
-if response.status_code != 200:
-    raise requests.exceptions.ConnectionError("Could not connect to JellyFin endpoint!")
+# response = requests.get(JELLYFIN_ENDPOINT)
+# if response.status_code != 200:
+#     raise requests.exceptions.ConnectionError("Could not connect to JellyFin endpoint!")
 
