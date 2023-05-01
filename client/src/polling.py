@@ -1,7 +1,6 @@
 import aiohttp
 import asyncio
 import json
-import requests
 
 from typing import Callable, Any
 
@@ -25,7 +24,7 @@ class Event:
             "identifier": str(self.identifier),
             "payload": json.dumps(payload)
         }
-        response = await sendGetRequest(self.__session, f"{config.SERVER_ENDPOINT}/callback", json=data)
+        await sendGetRequest(self.__session, f"{config.SERVER_ENDPOINT}/callback", json=data)
     
     def __str__(self) -> str:
         return f"Event: {self.event_type}, Identifier: {self.identifier}, Payload: {self.payload}"
