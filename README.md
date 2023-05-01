@@ -34,7 +34,10 @@ not functional yet :p
 # TODO
 
 - [x] Use aiohttp instead of requests to avoid blocking connections.
-- [ ] Map all endpoints used by jellyfin-web.
+- [ ] Map all endpoints used by jellyfin-web in the server.
+- [ ] Map all endpoints in jellyfin on the client to events.
+- [ ] Rewrite Jellyfin-apiclient-python using AIOHTTP.
+- [ ] Write tests.
 
 
 <p align="center">
