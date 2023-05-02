@@ -57,9 +57,9 @@ class EventEmitter:
     def __init__(self):
         self.events: list[Event] = []
 
-    async def fetch_last_event(self) -> Event:
+    async def fetch_event(self, last: bool = True) -> Event:
         try:
-            return self.events.pop()
+            return self.events.pop(0 if not last else -1)
         except IndexError:
             return Event(None, None, None)
         

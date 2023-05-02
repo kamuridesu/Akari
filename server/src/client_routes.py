@@ -13,7 +13,7 @@ async def events():
         events_to_send = int(fetch)
     events = []
     for _ in range(events_to_send):
-        last_ev = await ev_sender.fetch_last_event()
+        last_ev = await ev_sender.fetch_event()
         if last_ev.event_type:
             await cb_handler.register(last_ev)
             events.append(last_ev.json())

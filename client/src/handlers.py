@@ -8,6 +8,8 @@ client = AkarinClient()
 
 @ev_handlers.new(event_name="UserItems")
 async def get_all_media(event: Event):
-    params = json.loads(event.payload)
+    params = None
+    if event.payload:
+        params = json.loads(event.payload)
     result = client.jellyfin.user_items(params=params)
     return await event.reply(result)

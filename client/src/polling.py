@@ -95,7 +95,8 @@ class EventPolling:
             events: Response = await sendGetRequest(self.session, f"{config.SERVER_ENDPOINT}/events?fetch={fetch}")
             if events.status == 200:
                 event_json = await events.json()
-                print(event_json)
+                if event_json:
+                    print(event_json)
                 for event in event_json:
                     if event_json:
                         event = Event.new(event, self.session)
