@@ -10,7 +10,7 @@ async def hello(x):
 async def main():
     from src.client_routes import ev_sender, cb_handler
     
-    from src.polling import Event
+    from Shimarin.server.events import Event
     event = Event("all_media", None, lambda x: x)
     await cb_handler.register(event)
     await ev_sender.send(event)

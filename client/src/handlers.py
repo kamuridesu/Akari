@@ -1,6 +1,6 @@
 import json
 
-from .polling import EventsHandlers, EventPolling, Event
+from Shimarin.client.events import EventsHandlers, Event
 from .jellyfin import AkarinClient
 
 ev_handlers = EventsHandlers()

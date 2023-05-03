@@ -1,5 +1,5 @@
 import json
-from .polling import Event
+from Shimarin.server.events import Event
 from .client_routes import ev_sender
 
 

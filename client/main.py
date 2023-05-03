@@ -1,5 +1,5 @@
 import asyncio
-from src.polling import EventPolling
+from Shimarin.client.events import EventPolling
 from src.handlers import ev_handlers
 
 

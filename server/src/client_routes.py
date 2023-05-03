@@ -1,5 +1,5 @@
 from .server import request, app
-from .polling import EventEmitter, CallbacksHandlers
+from Shimarin.server.events import EventEmitter, CallbacksHandlers
 
 ev_sender = EventEmitter()
 cb_handler = CallbacksHandlers()
