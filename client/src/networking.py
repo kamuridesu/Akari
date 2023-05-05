@@ -2,8 +2,6 @@ import aiohttp
 import json
 import typing
 
-from .exceptions import ClientException, ServerException
-
 
 class Response:
     def __init__(self, status_code, content):

@@ -7,7 +7,7 @@ cb_handler = CallbacksHandlers()
 
 @app.route("/events", methods=["GET"])
 async def events():
-    fetch = request.args.get('fetch')
+    fetch = request.args.get("fetch")
     events_to_send = 1
     if fetch:
         events_to_send = int(fetch)
@@ -24,7 +24,7 @@ async def events():
 async def reply():
     data = request.get_json(silent=True)
     if data:
-        identifier = data['identifier']
-        payload = data['payload']
+        identifier = data["identifier"]
+        payload = data["payload"]
         await cb_handler.handle(identifier, payload)
     return {"ok": True}

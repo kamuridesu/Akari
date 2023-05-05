@@ -5,7 +5,7 @@ import logging
 
 
 app = Flask("server_mock")
-log = logging.getLogger('werkzeug')
+log = logging.getLogger("werkzeug")
 log.setLevel(logging.ERROR)
 app.logger.disabled = True
 log.disabled = True
@@ -17,6 +17,7 @@ def start():
     t.start()
     print("Server started")
     return t
+
 
 if __name__ == "__main__":
     start()
